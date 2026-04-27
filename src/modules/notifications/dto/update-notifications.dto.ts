@@ -1,0 +1,3 @@
+/**
+ * Update notifications DTO
+ */

@@ -1,0 +1,3 @@
+/**
+ * Update inbox controller
+ */

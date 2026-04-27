@@ -1,0 +1,3 @@
+/**
+ * Query campaigns controller
+ */

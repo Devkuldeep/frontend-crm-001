@@ -1,0 +1,3 @@
+/**
+ * Query notifications controller
+ */

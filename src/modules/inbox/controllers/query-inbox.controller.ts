@@ -1,0 +1,3 @@
+/**
+ * Query inbox controller
+ */

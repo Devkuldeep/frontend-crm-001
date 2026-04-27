@@ -1,0 +1,3 @@
+/**
+ * Create inbox controller
+ */

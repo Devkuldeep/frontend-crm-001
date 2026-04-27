@@ -1,0 +1,3 @@
+/**
+ * Create campaigns DTO
+ */
