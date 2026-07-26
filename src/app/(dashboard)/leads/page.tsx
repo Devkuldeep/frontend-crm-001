@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import { MockAPI } from "@/lib/api/mock-client";
+import { Button } from "@/components/ui/button";
 
 async function LeadsTable() {
   const response = await MockAPI.getLeads();
@@ -392,15 +393,13 @@ export default function LeadsPage() {
 
                 Import CSV
               </button>
-
-              <button
-                type="button"
-                className="group flex h-10 items-center justify-center gap-2 rounded-full bg-white px-5 text-xs font-medium text-black transition-all duration-300 hover:scale-[1.02] hover:bg-white/90"
-              >
-                <Plus className="h-3.5 w-3.5" />
-
-                Add lead
-              </button>
+            
+          <Link href="/leads/create" transitionTypes={["nav-forward"]}>
+  <Button className="rounded-full">
+    <Plus className="mr-2 h-4 w-4" />
+    Add Lead
+  </Button>
+</Link>
             </div>
           </div>
 
