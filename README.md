@@ -8,9 +8,7 @@ A polished, modern CRM outreach experience built with Next.js, React, Tailwind C
 
 ## ▶️ Video
 
-GitHub README files do not allow <iframe> embeds for security reasons. To keep the video visible from the README, the recommended approach is to use a clickable YouTube thumbnail that links to the video page.
-
-[![Watch the video](https://img.youtube.com/vi/ynkMrjhZme4/maxresdefault.jpg)](https://youtu.be/ynkMrjhZme4)
+[![Watch the video]](https://youtu.be/ynkMrjhZme4)
 
 If you want an embedded player, add the iframe to your deployed website (Next.js pages, GitHub Pages, or other HTML pages). See the "Embed on your site" section below for a responsive Next.js component.
 
