@@ -2,11 +2,13 @@
 
 A polished, modern CRM outreach experience built with Next.js, React, Tailwind CSS, and GSAP. This project brings together a marketing website, authentication flows, and a full-featured dashboard for campaigns, leads, inbox, meetings, analytics, and integrations.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ynkMrjhZme4?si=A25i69-Qy5M0hWom" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 <p align="center">
   <img src="public/screenshots/home.png" alt="CRM outreach landing page preview" width="100%" />
 </p>
 
-[![Watch the project showcase video on YouTube](public/screenshots/home.png)](https://youtu.be/ynkMrjhZme4)
+
 
 ## 📸 Screenshots Gallery
 
