@@ -6,11 +6,7 @@ A polished, modern CRM outreach experience built with Next.js, React, Tailwind C
   <img src="public/screenshots/home.png" alt="CRM outreach landing page preview" width="100%" />
 </p>
 
-<p align="center">
-  <video controls autoplay loop muted playsinline width="100%" poster="public/screenshots/home.png">
-    <source src="https://youtu.be/ynkMrjhZme4" type="video/mp4" />
-  </video>
-</p>
+[![Watch the project showcase video on YouTube](public/screenshots/home.png)](https://youtu.be/ynkMrjhZme4)
 
 ## 📸 Screenshots Gallery
 
