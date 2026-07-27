@@ -73,7 +73,7 @@ export default function MarketingLayout({
   children,
 }: MarketingLayoutProps) {
   return (
-    <div className="flex min-h-screen w-full max-w-full flex-col overflow-x-hidden bg-[#080808] text-white selection:bg-white selection:text-black">
+    <div className="flex min-h-screen w-full max-w-full flex-col overflow-x-visible bg-[#080808] text-white selection:bg-white selection:text-black">
       {/* Header */}
       <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6 md:pt-5">
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between rounded-2xl border border-white/[0.08] bg-[#0b0b0b]/80 px-4 shadow-2xl shadow-black/20 backdrop-blur-xl md:px-5">

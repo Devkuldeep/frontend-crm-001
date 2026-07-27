@@ -163,7 +163,7 @@ export default function MarketingHomePage() {
   return (
     <main
       ref={page}
-      className="w-full max-w-full overflow-x-hidden bg-[#080808] text-white selection:bg-white selection:text-black"
+      className="w-full max-w-full overflow-x-visible bg-[#080808] text-white selection:bg-white selection:text-black"
     >
       {/* Navigation */}
       {/* <header className="absolute inset-x-0 top-0 z-50 px-5 py-6 md:px-10">
@@ -412,23 +412,26 @@ export default function MarketingHomePage() {
       </section>
 
       {/* Workflow */}
-      <section
+<section
         id="workflow"
-        className="relative px-6 py-32 md:py-48"
+        className="relative z-10 px-6 py-20 md:py-32 lg:py-48 bg-ai-accent/10 backdrop:blur-[100px] bg-linear-to-b from-[#008080]/10 to-[#080000]/70"
       >
-        <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.75fr_1.25fr]">
-          <div>
+        <div className="mx-auto grid max-w-7xl gap-12 lg:gap-16 lg:grid-cols-[0.75fr_1.25fr]">
+          
+          {/* LEFT COLUMN: Text Content */}
+          <div className="relative">
+            {/* Sticks only on large screens, scrolls normally on mobile */}
             <div className="lg:sticky lg:top-32">
-              <h2 className="max-w-xl text-4xl font-medium tracking-[-0.05em] md:text-6xl">
+              <h2 className="max-w-xl text-4xl font-medium tracking-[-0.05em] md:text-5xl lg:text-6xl">
                 From lead list to meeting.
               </h2>
 
-              <p className="mt-6 max-w-md leading-7 text-white/40">
+              <p className="mt-5 max-w-md text-base leading-7 text-white/40 md:mt-6 md:text-lg">
                 Give your team a system that handles repetitive outreach while
                 keeping every conversation relevant and personal.
               </p>
 
-              <div className="mt-10 space-y-4">
+              <div className="mt-8 space-y-4 md:mt-10">
                 {[
                   "Personalized at scale",
                   "Automatic reply intelligence",
@@ -438,10 +441,9 @@ export default function MarketingHomePage() {
                     key={item}
                     className="flex items-center gap-3 text-sm text-white/60"
                   >
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-white/[0.04]">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.04]">
                       <Check className="h-3 w-3" />
                     </span>
-
                     {item}
                   </div>
                 ))}
@@ -449,38 +451,51 @@ export default function MarketingHomePage() {
             </div>
           </div>
 
-          <div className="space-y-6">
-            {workflow.map((item) => (
-              <article
+          {/* RIGHT COLUMN: The Stacking Cards */}
+          <div className="space-y-6 pb-12 lg:pb-24">
+            {workflow.map((item, index) => (
+              // 1. The Sticky Wrapper (No GSAP classes here)
+              <div
                 key={item.number}
-                className="workflow-card sticky top-28 min-h-[420px] overflow-hidden rounded-[2rem] border border-white/[0.08] bg-[#111] p-8 shadow-2xl shadow-black md:p-12"
+                className="sticky"
+                style={{
+                  // Dynamic overlap: adds 1.5rem spacing for each consecutive card
+                  top: `calc(6rem + ${index * 1.5}rem)`,
+                  zIndex: index + 10,
+                }}
               >
-                <div className="absolute right-[-10%] top-[-20%] h-72 w-72 rounded-full bg-violet-500/[0.08] blur-[90px]" />
+                {/* 2. The Animated Card (No sticky classes here) */}
+                <article className="workflow-card relative min-h-[320px] overflow-clip rounded-[1.5rem] border border-white/[0.08] bg-[#111] p-6 shadow-2xl shadow-black sm:p-8 md:min-h-[420px] lg:rounded-[2rem] lg:p-12">
+                  
+                  {/* Decorative Glow */}
+                  <div className="absolute right-[-10%] top-[-20%] h-56 w-56 rounded-full bg-violet-500/[0.08] blur-[70px] md:h-72 md:w-72 md:blur-[90px]" />
 
-                <div className="relative flex h-full min-h-[330px] flex-col">
-                  <span className="text-sm font-medium text-white/25">
-                    {item.number}
-                  </span>
+                  <div className="relative flex h-full min-h-[280px] flex-col md:min-h-[330px]">
+                    <span className="text-sm font-medium text-white/25">
+                      {item.number}
+                    </span>
 
-                  <div className="mt-auto">
-                    <h3 className="max-w-xl text-3xl font-medium tracking-[-0.04em] md:text-5xl">
-                      {item.title}
-                    </h3>
+                    <div className="mt-auto pt-8">
+                      <h3 className="max-w-xl text-2xl font-medium tracking-[-0.04em] sm:text-3xl md:text-4xl lg:text-5xl">
+                        {item.title}
+                      </h3>
 
-                    <p className="mt-5 max-w-lg leading-7 text-white/40">
-                      {item.description}
-                    </p>
+                      <p className="mt-4 max-w-lg text-sm leading-7 text-white/40 md:mt-5 md:text-base">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </div>
             ))}
           </div>
+          
         </div>
       </section>
 
       {/* CTA */}
       <section className="final-cta px-6 py-32 md:py-48">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-white/10 bg-white px-7 py-20 text-center text-black md:px-16 md:py-28">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2.5rem]  text-white border border-white/10 bg-black/10  bg-linear-to-b from-[#008080]/10 to-[#080080]/20 px-7 py-20 text-center md:px-16 md:py-28">
           <div className="absolute left-1/2 top-0 h-80 w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-300/40 blur-[100px]" />
 
           <Zap className="cta-reveal relative mx-auto mb-8 h-8 w-8" />
@@ -491,7 +506,7 @@ export default function MarketingHomePage() {
             More time closing.
           </h2>
 
-          <p className="cta-reveal relative mx-auto mt-7 max-w-xl text-base leading-7 text-black/50">
+          <p className="cta-reveal relative mx-auto mt-7 max-w-xl text-base leading-7 text-white/40 md:mt-8 md:text-lg">
             Build your first AI-powered campaign and turn repetitive sales work
             into an automated growth engine.
           </p>
@@ -499,7 +514,7 @@ export default function MarketingHomePage() {
           <div className="cta-reveal relative mt-10">
             <Link
               href="/dashboard"
-              className="group inline-flex h-13 items-center justify-center gap-3 rounded-full bg-black px-7 text-sm font-medium text-white transition-transform duration-300 hover:scale-[1.03]"
+              className="group inline-flex h-13 items-center justify-center gap-3 rounded-full bg-gray-200 px-7 text-sm font-medium text-black transition-transform duration-300 hover:scale-[1.03]"
             >
               Get started for free
 
